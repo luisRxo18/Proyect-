@@ -2,14 +2,10 @@ package poo.videojuego;
 import java.util.Collection;
 
 public class Fabrica implements FabricaDeObjetos
-
-private Collection<Personaje> personajes = new  Collection<Personaje>();
-private String[] arreglo = new String[3];
-private int x = 0;
-
 {
   public  Personaje construyePersonajeDesdeCadena(String paramString)
   {
+	private String[] arreglo = new String[3];
   	StringTokenizer personaje = new StringTokenizer(paramString,"|");
 	Personaje pers;
   	while (personaje.hasMoreTokens){
@@ -21,7 +17,8 @@ private int x = 0;
 
   
   public  Collection<Personaje> cargaPesonajesDesdeArchivo(String paramString){
-	
+	private int x = 0;
+	private Collection<Personaje> personajes = new  Collection<Personaje>();
 	try {
      	File archivo = new File("personajes.txt");
       	BufferedReader br;
@@ -45,7 +42,7 @@ public  Collection<Item> construyeUnItemDeCadaTipo(){
 	items.add(hierbas);
 	items.add(up);
 	items.add(spry);
-
+	return items;
 
 }
   
