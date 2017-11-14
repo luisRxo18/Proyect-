@@ -16,7 +16,7 @@ public class Ataque implements poo.videojuego.Ataque{
 	}
 
 	//Metodos implementados:
-	public int getExpetuenciaQueAporta(){
+	public int getExperienciaQueAporta(){
 		return experienciaAportada;
 	}
 	public int getDanoQueCausa(){
