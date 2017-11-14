@@ -45,7 +45,7 @@ public  Collection<Item> construyeUnItemDeCadaTipo(){
 	return items;
 
 }
-  
+  //pendiente
   public  Item construyeItemPorNombre(String paramString);
   
 public  Collection<Ataque> construyeUnAtaqueDeCadaClase()	{
@@ -58,6 +58,6 @@ public  Collection<Ataque> construyeUnAtaqueDeCadaClase()	{
 	attacks.add(especial);
 	return attacks;
 }
-  
+  //pendiente 
   public  Ataque construyeAtaquePorNombre(String paramString);
 }
