@@ -13,7 +13,7 @@ arreglo = new String[3];
   	while (personaje.hasMoreTokens){
   		arreglo[x].add(nextToken())
   	}
-	per = new (arreglo[0],Integer.parseInt(arreglo[1],Integer.parseInt(arreglos[2]);
+	per = new (arreglo[0],Integer.parseInt(arreglo[1]),Integer.parseInt(arreglos[2]));
 	return per;
   }
 
