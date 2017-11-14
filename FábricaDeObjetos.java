@@ -53,9 +53,9 @@ public  Collection<Item> construyeUnItemDeCadaTipo(){
   
 public  Collection<Ataque> construyeUnAtaqueDeCadaClase()	{
 	private Collection<Ataque> attacks = new  Collection<Ataque>();
-	Ataque golpe = new Ataque("puño del dragon", 60,0,30);
-	Ataque patada = new Ataque("patada de borracho", 30,0,50);
-	Ataque especial = new Ataque("Gordificio", 100,0,90);
+	Golpe golpe = new Golpe("puño del dragon", 60,0,30);
+	Patada patada = new Patada("patada de borracho", 30,0,50);
+	Especial especial = new Especial("Gordificio", 100,0,90);
 	attacks.add(golpe);
 	attacks.add(patada);
 	attacks.add(especial);
