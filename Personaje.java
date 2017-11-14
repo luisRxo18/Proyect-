@@ -1,7 +1,7 @@
 import java.util.Collection;
 package poo.videojuego;
 
-public class Personaje1 implements poo.videojuego.Personaje{
+public class Personaje implements poo.videojuego.Personaje{
 	//Atributos
 	private String nombre;
 	private int experiencia;
@@ -10,7 +10,7 @@ public class Personaje1 implements poo.videojuego.Personaje{
 	private Collection<Item> items;
 
 	//Constructor:
-	public Personaje1 (String nombre,int experiencia, int vida){
+	public Personaje (String nombre,int experiencia, int vida){
 		this.nombre = nombre;
 		this.experiencia = experiencia;
 		this.vida = vida;
