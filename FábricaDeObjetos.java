@@ -2,8 +2,10 @@ package poo.videojuego;
 import java.util.Collection;
 
 public class Fabrica implements FabricaDeObjetos
-String[] arreglo;
-arreglo = new String[3];
+
+private Collection<Personaje> personajes = new  Collection<Personaje>();
+private String[] arreglo = new String[3];
+private int x = 0;
 
 {
   public  Personaje construyePersonajeDesdeCadena(String paramString)
@@ -11,7 +13,7 @@ arreglo = new String[3];
   	StringTokenizer personaje = new StringTokenizer(paramString,"|");
 	Personaje pers;
   	while (personaje.hasMoreTokens){
-  		arreglo[x].add(nextToken())
+  		arreglo[x] = pers.nextToken();
   	}
 	per = new (arreglo[0],Integer.parseInt(arreglo[1]),Integer.parseInt(arreglos[2]));
 	return per;
@@ -26,12 +28,13 @@ arreglo = new String[3];
 	FileReader fr = new FileReader("personajes.txt");
 	br = new BufferedReader(fr);
 	while ((datos = br.readLine())!= null){
-	   	construyePersonajeDesdeCadena(datos);
+	   	personajes.add(construyePersonajeDesdeCadena(datos));
 	}
 	}
 	catch(IOException e){
         System.out.println("Error");
     	}
+	return personajes;
   }
   
   public  Collection<Item> construyeUnItemDeCadaTipo();
