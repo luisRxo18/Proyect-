@@ -37,7 +37,17 @@ private int x = 0;
 	return personajes;
   }
   
-  public  Collection<Item> construyeUnItemDeCadaTipo();
+public  Collection<Item> construyeUnItemDeCadaTipo(){
+	private Collection<Item> items = new  Collection<Item>();
+	Item hierbas = new Item("hierbas",20,30 );
+	Item up = new Item("potenciador",0,60);
+	Item spry = new Item("Spry de salud",50,0);
+	items.add(hierbas);
+	items.add(up);
+	items.add(spry);
+
+
+}
   
   public  Item construyeItemPorNombre(String paramString);
   
