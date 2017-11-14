@@ -1,12 +1,16 @@
 package poo.videojuego;
-
 import java.util.Collection;
 
 public class Fabrica implements FabricaDeObjetos
+
+
 {
   public  Personaje construyePersonajeDesdeCadena(String paramString)
   {
-
+  	StringTokenizer personaje = new StringTokenizer(paramString,"|");
+  	while (personaje.hasMoreTokens){
+  		arreglo[x].add(nextToken())
+  	}
   }
 
   
