@@ -1,7 +1,7 @@
 package poo.videojuego;
 
 /** 
-Esta clase implementa la clase Ataque
+Esta clase implementa la interface Ataque
 */
 public class Ataque implements poo.videojuego.Ataque{
 	private int experienciaAportada;
