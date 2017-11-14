@@ -8,9 +8,12 @@ arreglo = new String[3];
   public  Personaje construyePersonajeDesdeCadena(String paramString)
   {
   	StringTokenizer personaje = new StringTokenizer(paramString,"|");
+	Personaje pers;
   	while (personaje.hasMoreTokens){
   		arreglo[x].add(nextToken())
   	}
+	per = new (arreglo[0],int(arreglo[1]),int(arreglo[2]))
+	return per;
   }
 
   
