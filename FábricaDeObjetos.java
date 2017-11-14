@@ -4,17 +4,19 @@ import java.util.Collection;
 
 public class Fabrica implements FabricaDeObjetos
 {
-  public abstract Personaje construyePersonajeDesdeCadena(String paramString);
+  public  Personaje construyePersonajeDesdeCadena(String paramString)
+  {
+
+  }
 
   
-  public abstract Collection<Personaje> cargaPesonajesDesdeArchivo(String paramString);
+  public  Collection<Personaje> cargaPesonajesDesdeArchivo(String paramString);
   
-  public abstract Collection<Item> construyeUnItemDeCadaTipo();
+  public  Collection<Item> construyeUnItemDeCadaTipo();
   
-  public abstract Item construyeItemPorNombre(String paramString);
+  public  Item construyeItemPorNombre(String paramString);
   
-  public abstract Collection<Ataque> construyeUnAtaqueDeCadaClase();
+  public  Collection<Ataque> construyeUnAtaqueDeCadaClase();
   
-  public abstract Ataque construyeAtaquePorNombre(String paramString);
+  public  Ataque construyeAtaquePorNombre(String paramString);
 }
-
