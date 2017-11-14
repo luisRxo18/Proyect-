@@ -1,6 +1,6 @@
 package poo.videojuego;
 
-public class golpe implements poo.videojuego.Ataque{
+public class Golpe implements poo.videojuego.Ataque{
 	//Atributos
 	private int experienciaAportada;
 	private int danoCausado;
