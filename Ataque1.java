@@ -1,6 +1,6 @@
 package poo.videojuego;
 
-public class Ataque1 implements poo.videojuego.Ataque{
+public class Ataque implements poo.videojuego.Ataque{
 	//Atributos
 	private int experienciaAportada;
 	private int danoCausado;
@@ -8,7 +8,7 @@ public class Ataque1 implements poo.videojuego.Ataque{
 	private String nombre;
 
 	//Constructor
-	public Ataque1 (String nombre,int experienciaNecesaria,int experienciaAportada,int danoCausado){
+	public Ataque (String nombre,int experienciaNecesaria,int experienciaAportada,int danoCausado){
 		this.nombre=nombre;
 		this.experienciaNecesaria =experienciaNecesaria;
 		this.experienciaAportada=experienciaAportada;
