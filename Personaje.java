@@ -1,8 +1,8 @@
 import java.util.Collection;
 package poo.videojuego;
 
+//Esta clase implementa la interfaz Personaje 
 public class Personaje implements poo.videojuego.Personaje{
-	//Atributos
 	private String nombre;
 	private int experiencia;
 	private int vida;
