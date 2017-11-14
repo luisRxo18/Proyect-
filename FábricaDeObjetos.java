@@ -36,12 +36,12 @@ public class Fabrica implements FabricaDeObjetos
   
 public  Collection<Item> construyeUnItemDeCadaTipo(){
 	private Collection<Item> items = new  Collection<Item>();
-	Item hierbas = new Item("hierbas",20,30 );
-	Item up = new Item("potenciador",0,60);
-	Item spry = new Item("Spry de salud",50,0);
-	items.add(hierbas);
-	items.add(up);
-	items.add(spry);
+	Hierbas hierb = new Item("hierbas rojas",20,30 );
+	Up upp = new Item("potenciador",0,60);
+	Spry spr = new Item("Spry de salud",50,0);
+	items.add(hierb);
+	items.add(upp);
+	items.add(spr);
 	return items;
 
 }
