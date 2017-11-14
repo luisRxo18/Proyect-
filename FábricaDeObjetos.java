@@ -4,6 +4,7 @@ import java.util.Collection;
 public class Fabrica implements FabricaDeObjetos
 String[] arreglo;
 arreglo = new String[3];
+
 {
   public  Personaje construyePersonajeDesdeCadena(String paramString)
   {
@@ -12,7 +13,7 @@ arreglo = new String[3];
   	while (personaje.hasMoreTokens){
   		arreglo[x].add(nextToken())
   	}
-	per = new (arreglo[0],int(arreglo[1]),int(arreglo[2]))
+	per = new (arreglo[0],Integer.parseInt(arreglo[1],Integer.parseInt(arreglos[2]);
 	return per;
   }
 
