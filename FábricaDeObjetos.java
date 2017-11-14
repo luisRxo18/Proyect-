@@ -11,11 +11,19 @@ public class Fabrica implements FabricaDeObjetos
 
   
   public  Collection<Personaje> cargaPesonajesDesdeArchivo(String paramString){
-	  try {
-      File archivo = new File("personajes.txt");
-      BufferedReader br;
-	    FileReader fr = new FileReader("pwd.txt");
-    }
+	
+	try {
+     	File archivo = new File("personajes.txt");
+      	BufferedReader br;
+	FileReader fr = new FileReader("personajes.txt");
+	br = new BufferedReader(fr);
+	while ((datos = br.readLine())!= null){
+	   	construyePersonajeDesdeCadena(datos);
+	}
+	}
+	catch(IOException e){
+        System.out.println("Error");
+    	}
   }
   
   public  Collection<Item> construyeUnItemDeCadaTipo();
