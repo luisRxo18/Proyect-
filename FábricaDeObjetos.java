@@ -4,7 +4,7 @@ import java.util.Collection;
 
 public class Fabrica implements FabricaDeObjetos
 {
-  public  Collection<Personaje> construyePersonajeDesdeCadena(String paramString)
+  public  Personaje construyePersonajeDesdeCadena(String paramString)
   {
 
   }
