@@ -48,6 +48,7 @@ public  Collection<Item> construyeUnItemDeCadaTipo(){
   //pendiente
   public  Item construyeItemPorNombre(String paramString){
   	Hierbas herbal = new Hierbas(paramString);
+	return herbal; 
   }
   
 public  Collection<Ataque> construyeUnAtaqueDeCadaClase()	{
