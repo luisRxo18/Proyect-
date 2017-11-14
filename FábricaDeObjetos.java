@@ -3,7 +3,7 @@ import java.util.Collection;
 
 public class Fabrica implements FabricaDeObjetos
 
-
+arreglo = new String[3];
 {
   public  Personaje construyePersonajeDesdeCadena(String paramString)
   {
