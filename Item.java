@@ -1,7 +1,7 @@
 package poo.videojuego;
 
 /** 
-Esta clase implementa la clase Item
+Esta clase implementa la interface Item
 */
 public class Item implements poo.videojuego.Item{
 	private String nombre;
