@@ -4,13 +4,19 @@ import java.util.Collection;
 
 public class Fabrica implements FabricaDeObjetos
 {
-  public  Personaje construyePersonajeDesdeCadena(String paramString)
+  public  Collection<Personaje> construyePersonajeDesdeCadena(String paramString)
   {
 
   }
 
   
-  public  Collection<Personaje> cargaPesonajesDesdeArchivo(String paramString);
+  public  Collection<Personaje> cargaPesonajesDesdeArchivo(String paramString){
+	  try {
+      File archivo = new File("personajes.txt");
+      BufferedReader br;
+	    FileReader fr = new FileReader("pwd.txt");
+    }
+  }
   
   public  Collection<Item> construyeUnItemDeCadaTipo();
   
