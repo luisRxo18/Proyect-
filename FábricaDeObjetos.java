@@ -62,5 +62,8 @@ public  Collection<Ataque> construyeUnAtaqueDeCadaClase()	{
 	return attacks;
 }
   //pendiente 
-  public  Ataque construyeAtaquePorNombre(String paramString);
+  public  Ataque construyeAtaquePorNombre(String paramString){
+	Hierbas herbal = new Hierbas(paramString);
+	return herbal; 
+}
 }
