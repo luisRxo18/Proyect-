@@ -9,7 +9,7 @@ public class Golpe implements poo.videojuego.Ataque{
 
 	//Constructor
 
-	public Ataque(String nombre)
+	public Golpe(String nombre)
 	{
 		this.nombre=nombre;
 		experienciaNecesaria=30;
@@ -18,7 +18,7 @@ public class Golpe implements poo.videojuego.Ataque{
 
 
 	}
-	public Ataque (String nombre,int experienciaNecesaria,int experienciaAportada,int danoCausado){
+	public Golpe (String nombre,int experienciaNecesaria,int experienciaAportada,int danoCausado){
 		this.nombre=nombre;
 		this.experienciaNecesaria =experienciaNecesaria;
 		this.experienciaAportada=experienciaAportada;
