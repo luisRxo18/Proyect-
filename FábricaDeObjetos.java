@@ -48,7 +48,16 @@ public  Collection<Item> construyeUnItemDeCadaTipo(){
   
   public  Item construyeItemPorNombre(String paramString);
   
-  public  Collection<Ataque> construyeUnAtaqueDeCadaClase();
+public  Collection<Ataque> construyeUnAtaqueDeCadaClase()	{
+	private Collection<Ataque> attacks = new  Collection<Ataque>();
+	Ataque golpe = new Ataque1("puño del dragon", 60,0,30);
+	Ataque patada = new Ataque1("patada de borracho", 30,0,50);
+	Ataque especial = new Ataque1("Gordificio", 100,0,90);
+	attacks.add(golpe);
+	attacks.add(patada);
+	attacks.add(especial);
+	return attacks;
+}
   
   public  Ataque construyeAtaquePorNombre(String paramString);
 }
