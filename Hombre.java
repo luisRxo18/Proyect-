@@ -33,10 +33,10 @@ public class Hombre implements poo.videojuego.Personaje {
         vida = vida - ataque.getDanoQueCausa();
     }
     public void usa(Item item){
-        vida = item.getEnergiaQueAporta();
-        experiencia = item.getExperienciaQueAporta();
-        int i = items.indexOf(item);
-        items.remove(i);
+        if(item.getEnergiaQueAporta()!=0)
+            vida+=item.getEnergiaQueAporta();
+        if(item.getEnergiaQueAporta()!=0)
+            experiencia+=item.getExperienciaQueAporta();
     }
     public void guarda (Ataque ataque){
         try{
@@ -74,3 +74,4 @@ public class Hombre implements poo.videojuego.Personaje {
         }catch (IOException err){}
     }
 }
+
