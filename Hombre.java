@@ -69,7 +69,7 @@ public class Hombre implements poo.videojuego.Personaje {
             if (!ubicacion.exists())
                 ubicacion.createNewFile();
             FileWriter fw = new FileWriter(ubicacion, true);
-            fw.write(nombre + "|" + experiencia + "|" + vida + "|");
+            fw.write(nombre + "|" + experiencia + "|" + vida + "\n");
             fw.close();
         }catch (IOException err){}
     }
