@@ -1,79 +1,77 @@
 package poo.videojuego;
 import java.io.*;
-import java.util.*;
-import java.util.StringTokenizer;
-
-public class Fabrica implements FabricaDeObjetos
-{
-	int vid,exp;
-  public  Personaje construyePersonajeDesdeCadena(String paramString)
-  {
-	String arreglo[] = new String[3];
-	int x=0;
-  	StringTokenizer personaje = new StringTokenizer(paramString,"|");
-	Personaje pers;
-  	while (personaje.hasMoreTokens()){
-  		arreglo[x] = personaje.nextToken();
-  		x++;
-  	}
-  	vid = Integer.parseInt(arreglo[1]);
-  	exp = Integer.parseInt(arreglo[2]);
-	pers = new Hombre(arreglo[0],vid,exp);
-	return pers;
-  }
-
-  
-  public  Collection<Personaje> cargaPesonajesDesdeArchivo(String paramString){
-	 int x = 0;
-	 String datos;
-	 Collection<Personaje> personajes = new ArrayList<Personaje>();
-	try {
-    File archivo = new File("personajes.txt");
-    BufferedReader br;
-	FileReader fr = new FileReader("personajes.txt");
-	br = new BufferedReader(fr);
-	while ((datos = br.readLine()) != null){
-	   	personajes.add(construyePersonajeDesdeCadena(datos));
-	}
-	br.close();    
-    fr.close();
-	}
-	catch(IOException e){
-        System.out.println("Error");
+import java.util.ArrayList;
+import poo.videojuego.ExperienciaNoSuficienteException;
+public class Hombre implements poo.videojuego.Personaje {
+    //Atributos
+    private String nombre;
+    private int experiencia;
+    private  int vida;
+    private ArrayList<Ataque> ataques;
+    private ArrayList<Item> items;
+    
+    //Constructor:
+    public Hombre (String nombre,int experiencia, int vida){
+        this.nombre = nombre;
+        this.experiencia = experiencia;
+        this.vida = vida;
+        ataques = new ArrayList<Ataque>();
+        items = new ArrayList<Item>();
     }
-	return personajes;
-  }
-  
-public  Collection<Item> construyeUnItemDeCadaTipo(){
-	Collection<Item> items = new  ArrayList<Item>();
-	Hierbas hierb = new Hierbas("hierbas rojas",20,30 );
-	Up upp = new Up("potenciador",0,60);
-	Spry spr = new Spry("Spry de salud",50,0);
-	items.add(hierb);
-	items.add(upp);
-	items.add(spr);
-	return items;
+    //Aqui va el try cath de la experiencia necesaria
+    public Ataque lanza(String nombreAtaque){
+        for (Ataque A : ataques){
+            if (A.getNombre().equals(nombreAtaque)){
+                experiencia = experiencia + A.getExperienciaQueAporta();
+                ataques.remove(A);
+                return A;
+            }
+        }
+        return null;
+    }
+    public void recibe (Ataque ataque){
+        vida = vida - ataque.getDanoQueCausa();
+    }
+    public void usa(Item item){
+        vida = item.getEnergiaQueAporta();
+        experiencia = item.getExperienciaQueAporta();
+        int i = items.indexOf(item);
+        items.remove(i);
+    }
+    public void guarda (Ataque ataque){
+        try{
+        if (ataque.getExperienciaNecesaria() <= experiencia){
+            ataques.add(ataque);
+        }else{
+            throw new ExperienciaNoSuficienteExcepcion();
+        }
+        }
+        catch(ExperienciaNoSuficienteExcepcion experere)
+        {
+            
+        }
+    }
+    public ArrayList<Ataque> getAtaques(){
+        return ataques;
+    }
+    public int getExperiencia(){
+        return experiencia;
+    }
+    public int getEnergia(){
+        return vida;
+    }
+    public String getNombre(){
+        return nombre;
+    }
+    public void guardaEnArchivo(String archivo){
+        try{
+            File ubicacion = new File(archivo);
+            if (!ubicacion.exists())
+                ubicacion.createNewFile();
+            FileWriter fw = new FileWriter(ubicacion, true);
+            fw.write(nombre + "|" + experiencia + "|" + vida + "|");
+            fw.close();
+        }catch (IOException err){}
+    }
+}
 
-}
-  //pendiente
-  public  Item construyeItemPorNombre(String paramString){
-  	Hierbas herbal = new Hierbas(paramString);
-	return herbal; 
-  }
-  
-public  Collection<Ataque> construyeUnAtaqueDeCadaClase()	{
-	Collection<Ataque> attacks = new  ArrayList<Ataque>();
-	Golpe golpe = new Golpe("puño del dragon", 60,0,30);
-	Patada patada = new Patada("patada de borracho", 30,0,50);
-	Especial especial = new Especial("Gordificio", 100,0,90);
-	attacks.add(golpe);
-	attacks.add(patada);
-	attacks.add(especial);
-	return attacks;
-}
-  //pendiente 
-  public  Ataque construyeAtaquePorNombre(String paramString){
-	Especial attack = new Especial(paramString);
-	return attack; 
-}
-}
