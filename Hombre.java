@@ -1,7 +1,8 @@
 package poo.videojuego;
+import java.io.*;
 import java.util.ArrayList;
 
-public class Hombre implements poo.videojuego.Personaje{
+public class Hombre implements poo.videojuego.Personaje {
 	//Atributos
 	private String nombre;
 	private int experiencia;
@@ -18,32 +19,31 @@ public class Hombre implements poo.videojuego.Personaje{
 		items = new ArrayList<Item>();
 	}
 	//Aqui va el try cath de la experiencia necesaria
-	public Ataque lanza(String nombreAtaque) throws ExperienciaNoSuficienteExcepcion{
+	public Ataque lanza(String nombreAtaque){
 		for (Ataque A : ataques){
 			if (A.getNombre().equals(nombreAtaque)){
-				if (A.getExperienciaNecesaria()==experiencia){
-					experiencia = experiencia + A.getExperienciaQueAporta();
-					ataques.remove(A);
-					return A;
+						experiencia = experiencia + A.getExperienciaQueAporta();
+						ataques.remove(A);
+						return A;
 				}
-				else
-				{
-				throw new ExperienciaNoSuficienteExcepcion();
-				}
-
 			}
-		}
 		return null;
-
 	}
 	public void recibe (Ataque ataque){
 		vida = vida - ataque.getDanoQueCausa();
 	}
-	public void usa (Item item){
-		//No la entendi bien eso de los dos tipos de item
+	public void usa(Item item){
+		vida = item.getEnergiaQueAporta();
+		experiencia = item.getExperienciaQueAporta();
+		int i = items.indexOf(item);
+		items.remove(i); 
 	}
 	public void guarda (Ataque ataque){
-		ataques.add(ataque);
+		if (ataque.getExperienciaNecesaria() <= experiencia){
+			ataques.add(ataque);
+		}else{
+			throw new ExperienciaNoSuficienteExcepcion();
+		}
 	}
 	public ArrayList<Ataque> getAtaques(){
 		return ataques;
@@ -58,6 +58,13 @@ public class Hombre implements poo.videojuego.Personaje{
 		return nombre;
 	}
 	public void guardaEnArchivo(String archivo){
-		//Aqui podriamos aplicar el command, but no se como
+		try{
+			File ubicacion = new File(archivo);
+			if (!ubicacion.exists())
+				ubicacion.createNewFile();
+			FileWriter fw = new FileWriter(ubicacion, true);
+			fw.write(nombre + "|" + experiencia + "|" + vida + "|");
+		fw.close();
+		}catch (IOException err){}
 	}
 }
