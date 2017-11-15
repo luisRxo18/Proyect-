@@ -5,13 +5,13 @@ private FabricaDeObjetos fabrica;
 private String archivo;
 private PartidaUI ui;
 private int totalRondas;
-private int itmesIniciales;
-	public void configura(FabricaDeObjetos fabrica, String archivo, PartidaUI ui, int totalRondas, int itmesIniciales){
+private int itemsIniciales;
+	public void configura(FabricaDeObjetos fabrica, String archivo, PartidaUI ui, int totalRondas, int itemsIniciales){
 			this.fabrica = fabrica;
 			this.archivo = archivo;
 			this.ui=ui;
 			this.totalRondas=totalRondas;
-			this.itmesIniciales=itmesIniciales;
+			this.itemsIniciales=itemsIniciales;
 	} 
 	public void inicia(){
 
