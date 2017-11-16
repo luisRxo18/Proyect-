@@ -4,9 +4,16 @@ import java.io.*;
 import java.util.*;
 import java.util.StringTokenizer;
 
+
+/**Clase que implementa de FabricaDeObjetos*/
 public class Fabrica implements FabricaDeObjetos
 {
     int vid,exp;
+    
+    /**
+    Con este método, apartir de una cadena generamos a nuestro personaje y regresamos el objeto "personaje"
+    @param paramString Recibimos como cadena los datos de nuestro personaje
+    @return objeto de tipo Personaje*/
     public  Personaje construyePersonajeDesdeCadena(String paramString)
     {
         String arreglo[] = new String[3];
@@ -23,15 +30,21 @@ public class Fabrica implements FabricaDeObjetos
         return pers;
     }
     
+    /** 
+    Abrimos una archivo especificado con el parametro String y generamos apartir de ahí a nuestros personajes
+    a nuestros personajes.
     
+    @return Una colección de objetos de tipo Personaje
+    @param paramSting Cadena la ruta donde está guardado el archivo donde están los datos de nuestros personajes
+    */
     public  Collection<Personaje> cargaPesonajesDesdeArchivo(String paramString){
         int x = 0;
         String datos;
         Collection<Personaje> personajes = new ArrayList<Personaje>();
         try {
-            File archivo = new File("personajes.txt");
+            File archivo = new File(paramString);
             BufferedReader br;
-            FileReader fr = new FileReader("personajes.txt");
+            FileReader fr = new FileReader(paramString);
             br = new BufferedReader(fr);
             while ((datos = br.readLine()) != null){
                 personajes.add(construyePersonajeDesdeCadena(datos));
@@ -45,6 +58,9 @@ public class Fabrica implements FabricaDeObjetos
         return personajes;
     }
     
+    /** Construye un item de hierbas, un potenciador y un spry de salud
+    	@return Regresa una colección con los ítems creados
+    */
     public  Collection<Item> construyeUnItemDeCadaTipo(){
         Collection<Item> items = new  ArrayList<Item>();
         Hierbas hierb = new Hierbas("hierbas rojas",20,30 );
@@ -57,6 +73,10 @@ public class Fabrica implements FabricaDeObjetos
         
     }
     //pendiente
+    /** Construímos únicamente un item dependiendo el parametro que se envie
+    	@return Objeto del tipo de item que se pidió
+	@param paramString Recibimos el nombre del Item por el nombre del item
+*/
     public  Item construyeItemPorNombre(String paramString){
         Hierbas herbal = new Hierbas(paramString);
 	Up upo = new Up(paramString);
@@ -73,7 +93,10 @@ public class Fabrica implements FabricaDeObjetos
 		return sp;
 	}
 }
-    
+
+    /** Construye un ataque de puño del dragón, un patada de borracho y un gordificio
+    	@return Regresa una colección con los ataques creados
+    */
     public  Collection<Ataque> construyeUnAtaqueDeCadaClase() 
    {
         Collection<Ataque> attacks = new  ArrayList<Ataque>();
@@ -85,7 +108,12 @@ public class Fabrica implements FabricaDeObjetos
         attacks.add(especial);
         return attacks;
     }
+    
     //pendiente
+    /** Construímos únicamente un ataque dependiendo el parametro que se envie
+    	@return Objeto del tipo de ataque que se pidió
+	@param paramString Recibimos el nombre del ataque por el nombre del item
+*/
     public  Ataque construyeAtaquePorNombre(String paramString){
         Especial es = new Especial(paramString);
 	Golpe gol = new Golpe(paramString);
