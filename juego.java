@@ -26,7 +26,7 @@ private Personaje persoajeActual;
 	} 
 	public void inicia(){
         
-	fabrica.cargaPersonajesDesdeArchivo("hola");
+	pers = fabrica.cargaPesonajesDesdeArchivo(archivo);
 	this.totalRondas=3;
 	this.itemsIniciales=3;
 	items = new ArrayList<Item>();
