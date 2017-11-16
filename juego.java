@@ -4,7 +4,7 @@ import poo.videojuego.ui.Accion;
 import java.util.*;
 import poo.videojuego.Fabrica;
 
-public class juego implements poo.videojuego.ui.Partida {
+public class Juego implements poo.videojuego.ui.Partida {
 private FabricaDeObjetos fabrica;
 private String archivo;
 private PartidaUI ui;
