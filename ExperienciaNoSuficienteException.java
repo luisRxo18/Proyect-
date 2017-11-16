@@ -1,6 +1,6 @@
 package poo.videojuego;
 
-public class ExperienciaNoSuficienteExcepcion extends Exception {
+public class ExperienciaNoSuficienteException extends Exception {
 	
 	public ExperienciaNoSuficienteExcepcion(){
 		super("Experiecia Insuficiente");
