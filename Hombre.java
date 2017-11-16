@@ -1,7 +1,10 @@
 package poo.videojuego;
 import java.io.*;
 import java.util.ArrayList;
-import poo.videojuego.ExperienciaNoSuficienteExcepcion;
+import java.util.Collection;
+import poo.videojuego.Ataque;
+import poo.videojuego.Item;
+import poo.videojuego.ExperienciaNoSuficienteException;
 /** 
 Esta clase implementa la interface Ataque
 */
