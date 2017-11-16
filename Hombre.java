@@ -1,7 +1,7 @@
 package poo.videojuego;
 import java.io.*;
 import java.util.ArrayList;
-import poo.videojuego.ExperienciaNoSuficienteException;
+import poo.videojuego.ExperienciaNoSuficienteExcepcion;
 public class Hombre implements poo.videojuego.Personaje {
     //Atributos
     private String nombre;
@@ -50,6 +50,7 @@ public class Hombre implements poo.videojuego.Personaje {
         {
             
         }
+
     }
     public ArrayList<Ataque> getAtaques(){
         return ataques;
