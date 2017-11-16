@@ -29,7 +29,7 @@ public class Hombre implements poo.videojuego.Personaje {
     
     /**@return Un objeto de tipo ataque, en caso de no encontrarlo no regresa nada
        @param nombreAtaque Es una cadena de la cual usamos para regresar el ataque*/
-    public Ataque lanza(String nombreAtaque){
+       public Ataque lanza(String nombreAtaque){
         for (Ataque A : ataques){
             if (A.getNombre().equals(nombreAtaque)){
                 experiencia = experiencia + A.getExperienciaQueAporta();
@@ -37,7 +37,7 @@ public class Hombre implements poo.videojuego.Personaje {
                 return A;
             }
         }
-        return null;
+        throw new ExperienciaNoSuficienteException();
     }
     /** @return No regresa nada
         @param ataque Recibe un ataque en específico y resta vida dependiendo de el poder de éste*/
@@ -58,19 +58,13 @@ public class Hombre implements poo.videojuego.Personaje {
         @param ataque Recibe un objeto de la clase Ataque
         Este método recibe un ataque, verifica que se tenga la experiencia necesaria, y en caso de no tenerla,
         manda una excepción*/
-    public void guarda (Ataque ataque){
-        try{
+      public void guarda (Ataque ataque)throws ExperienciaNoSuficienteException {
+        
         if (ataque.getExperienciaNecesaria() <= experiencia){
             ataques.add(ataque);
         }else{
-            throw new ExperienciaNoSuficienteExcepcion();
+            throw new ExperienciaNoSuficienteException();
         }
-        }
-        catch(ExperienciaNoSuficienteExcepcion experere)
-        {
-            
-        }
-
     }
     
     /** @return Regresa un Arraylist de tipo "Ataque"*/
