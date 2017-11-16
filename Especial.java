@@ -30,15 +30,24 @@ public class Especial implements poo.videojuego.Ataque{
 	}
 
 	//Metodos implementados:
+	/** regresa un valor en entero de la experiencia que aporta
+	@param No tiene parámetros
+	@return Regresa dato de tipo entero de los puntos de experiencia que aporta
+	*/
 	public int getExperienciaQueAporta(){
 		return experienciaAportada;
 	}
+	
+	/**@return Retorna el daño que causa el golpe en entero*/
 	public int getDanoQueCausa(){
 		return danoCausado;
 	}
+	
+	/**@return Retorna la experiencia necesaria para utilizarlo en entero*/
 	public int getExperienciaNecesaria(){
 		return experienciaNecesaria;
 	}
+	/**@return Retorna el nombre del golpe como cadena*/
 	public String getNombre(){
 		return nombre;
 	}
